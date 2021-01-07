@@ -14,12 +14,44 @@ namespace FinalProjectSudoku
         //ASK Jānis how complicated it would be to do scratch numbers
         public void MakingMoves()
         {
+            //here Enter would leave to a place where we choose level/see grid/see keys
             //define keys to move, new game, exit, hint
+            ConsoleKey result = Console.ReadKey().Key;
+            if (result == ConsoleKey.LeftArrow)
+            {
+                //should add code how to move coursor to the left
+            }
+            else if (result == ConsoleKey.RightArrow)
+            {
+                //need code how to move coursor to the right
+            }
+            else if (result == ConsoleKey.UpArrow)
+            {
+                ////need code how to move coursor up
+            }
+            else if (result == ConsoleKey.DownArrow)
+            {
+                ////need code how to move coursor down
+            }
+            else if (result == ConsoleKey.N)
+            {
+                ////need code for starting a new game
+            }
+            else if (result == ConsoleKey.Escape)
+            {
+                ////need code for exiting (giving up)
+            }
+            else if (result == ConsoleKey.H)
+            {
+                ////need code for giving a hint.....if we`ll offer this option at all
+            }
+
+
             //all the checks for input number and what happens after
             //hints --> separate class in Puzzle? each puzzle has specific hints or automatic ones? Logic hints or number hints? could do HINTS AND LIFELINES
             //check solution
             //progress
-            
+
         }
 
         public void PrintGameBoard(int[,] puzzle)

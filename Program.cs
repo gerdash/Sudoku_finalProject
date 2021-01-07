@@ -11,20 +11,24 @@ namespace FinalProjectSudoku
 		Console.SetWindowSize(90, 40);
 
             #region Intro by Sandra
-            //for (int i = 0; i < 3; i++)
-            //{
-            //	PrintSudokuHorizontal();
-            //	System.Threading.Thread.Sleep(400);
-            //	Console.Clear();
-            //	PrintSudoku();
-            //	System.Threading.Thread.Sleep(400);
-            //	Console.Clear();
-            //}
-            //InfoAboutGame();
-            //Console.WriteLine();
-            //Console.WriteLine("Press Enter to start a new game!");
-            //Console.ReadKey();
-            //         //here Enter would leave to a place where we choose level/see grid/see keys
+            for (int i = 0; i < 3; i++)
+            {
+                PrintSudokuHorizontal();
+                System.Threading.Thread.Sleep(400);
+                Console.Clear();
+                PrintSudoku();
+                System.Threading.Thread.Sleep(400);
+                Console.Clear();
+            }
+            InfoAboutGame();
+            Console.WriteLine();
+            Console.WriteLine("Press Enter to start a new game!");
+            ConsoleKey result = Console.ReadKey().Key;
+            if (result == ConsoleKey.Enter)
+            {
+                //here Enter would leave to a place where we choose level/see grid/see keys
+            }
+           
             #endregion
             #region Adding a puzzle and a solution
             //minimum 3 puzzles - easy / medium / hard all stored in a database of sorts puzzle + solution

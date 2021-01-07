@@ -1,0 +1,13 @@
+C:\Users\Sandra Aunina\source\repos\Sudoku_finalProject\bin\Debug\netcoreapp3.1\FinalProjectSudoku.exe
+C:\Users\Sandra Aunina\source\repos\Sudoku_finalProject\bin\Debug\netcoreapp3.1\FinalProjectSudoku.deps.json
+C:\Users\Sandra Aunina\source\repos\Sudoku_finalProject\bin\Debug\netcoreapp3.1\FinalProjectSudoku.runtimeconfig.json
+C:\Users\Sandra Aunina\source\repos\Sudoku_finalProject\bin\Debug\netcoreapp3.1\FinalProjectSudoku.runtimeconfig.dev.json
+C:\Users\Sandra Aunina\source\repos\Sudoku_finalProject\bin\Debug\netcoreapp3.1\FinalProjectSudoku.dll
+C:\Users\Sandra Aunina\source\repos\Sudoku_finalProject\bin\Debug\netcoreapp3.1\FinalProjectSudoku.pdb
+C:\Users\Sandra Aunina\source\repos\Sudoku_finalProject\obj\Debug\netcoreapp3.1\FinalProjectSudoku.csprojAssemblyReference.cache
+C:\Users\Sandra Aunina\source\repos\Sudoku_finalProject\obj\Debug\netcoreapp3.1\FinalProjectSudoku.AssemblyInfoInputs.cache
+C:\Users\Sandra Aunina\source\repos\Sudoku_finalProject\obj\Debug\netcoreapp3.1\FinalProjectSudoku.AssemblyInfo.cs
+C:\Users\Sandra Aunina\source\repos\Sudoku_finalProject\obj\Debug\netcoreapp3.1\FinalProjectSudoku.csproj.CoreCompileInputs.cache
+C:\Users\Sandra Aunina\source\repos\Sudoku_finalProject\obj\Debug\netcoreapp3.1\FinalProjectSudoku.dll
+C:\Users\Sandra Aunina\source\repos\Sudoku_finalProject\obj\Debug\netcoreapp3.1\FinalProjectSudoku.pdb
+C:\Users\Sandra Aunina\source\repos\Sudoku_finalProject\obj\Debug\netcoreapp3.1\FinalProjectSudoku.genruntimeconfig.cache
