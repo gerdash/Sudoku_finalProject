@@ -1,29 +1,65 @@
 ﻿using System;
 
-namespace Sudoku_1
+namespace FinalProjectSudoku
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
+	class Program
+	{
+		
 
-            for (int i = 0; i <3; i++)
-            {
-                PrintSudokuHorizontal();
-                System.Threading.Thread.Sleep(400);
-                Console.Clear();
-                PrintSudoku();
-                System.Threading.Thread.Sleep(400);
-                Console.Clear();
-            }
-            InfoAboutGame(); 
-            Console.WriteLine();
-            Console.WriteLine("Press Enter to start a new game!");
-            Console.ReadKey(); //here Enter would leave to a place where we choose level/see grid/see keys
-        }
-
+		static void Main(string[] args)
+		{
+			Console.SetWindowSize(90, 40);
         
-         static void PrintSudoku()
+            #region Intro by Sandra
+            //for (int i = 0; i < 3; i++)
+            //{
+            //	PrintSudokuHorizontal();
+            //	System.Threading.Thread.Sleep(400);
+            //	Console.Clear();
+            //	PrintSudoku();
+            //	System.Threading.Thread.Sleep(400);
+            //	Console.Clear();
+            //}
+            //InfoAboutGame();
+            //Console.WriteLine();
+            //Console.WriteLine("Press Enter to start a new game!");
+            //Console.ReadKey();
+            //         //here Enter would leave to a place where we choose level/see grid/see keys
+            #endregion
+
+            //minimum 3 puzzles - easy / medium / hard all stored in a database of sorts puzzle + solution
+            GameBoard myGame = new GameBoard();
+
+			myGame.Puzzle = new int[9, 9] { 
+														{ 7, 0, 4, 0, 0, 6, 0, 0, 9 }, 
+														{ 0, 8, 0, 0, 1, 0, 0, 0, 0 },
+														{0, 0, 3, 0, 2, 0, 4, 5, 0 },
+														{ 0, 0, 0, 0, 0, 0, 0, 0, 2},
+														{ 0, 5, 6, 0, 0, 0, 7, 8, 0},
+														{ 1, 0, 0, 0, 0, 0, 0, 0, 0},
+														{ 0, 2, 5, 0, 3, 0, 1, 0, 0},
+														{0, 0, 0, 0, 4, 0, 0, 6, 0 },
+														{ 9, 0, 0, 5, 0, 0, 3, 0, 7} 
+			};
+
+			//IF we have time, create a solver for the puzzles stored in the database, if not, another file with solutions
+			myGame.Solution = new int[9, 9] {
+														{ 7, 1, 4, 3, 5, 6, 8, 2, 9 },
+														{ 5, 8, 2, 4, 1, 9, 6, 7, 3 },
+														{6, 9, 3, 7, 2, 8, 4, 5, 1 },
+														{ 3, 7, 9, 8, 6, 4, 5, 1, 2},
+														{ 2, 5, 6, 1, 9, 3, 7, 8, 4},
+														{ 1, 4, 8, 2, 7, 5, 9, 3, 6},
+														{ 4, 2, 5, 6, 3, 7, 1, 9, 8},
+														{8, 3, 7, 9, 4, 1, 2, 6, 5 },
+														{ 9, 6, 1, 5, 8, 2, 3, 4, 7}
+			};
+
+            myGame.PrintGameBoard(myGame.Puzzle);
+
+		}
+
+        static void PrintSudoku()
         {
             Console.ForegroundColor = ConsoleColor.Magenta; //HERE STARTS NAME SUDOKU VERTICALY
             Console.SetCursorPosition(2, 5);
@@ -151,9 +187,12 @@ namespace Sudoku_1
             Console.WriteLine(" * Each vertical column contains each digit exactly once");
             Console.SetCursorPosition(11, 11);
             Console.WriteLine(" * Each subgrid contains each digit exactly once");
+            Console.ResetColor();
 
         }
-
+        
     }
+    
+
 
 }
