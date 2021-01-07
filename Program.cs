@@ -8,8 +8,8 @@ namespace FinalProjectSudoku
 
 		static void Main(string[] args)
 		{
-			Console.SetWindowSize(90, 40);
-        
+		Console.SetWindowSize(90, 40);
+
             #region Intro by Sandra
             //for (int i = 0; i < 3; i++)
             //{
@@ -26,7 +26,7 @@ namespace FinalProjectSudoku
             //Console.ReadKey();
             //         //here Enter would leave to a place where we choose level/see grid/see keys
             #endregion
-
+            #region Adding a puzzle and a solution
             //minimum 3 puzzles - easy / medium / hard all stored in a database of sorts puzzle + solution
             GameBoard myGame = new GameBoard();
 
@@ -54,7 +54,12 @@ namespace FinalProjectSudoku
 														{8, 3, 7, 9, 4, 1, 2, 6, 5 },
 														{ 9, 6, 1, 5, 8, 2, 3, 4, 7}
 			};
-
+            #endregion
+            #region Stopwatch
+            var timer = new Stopwatch();
+            timer.Start();
+            timer.Stop();
+            #endregion
             myGame.PrintGameBoard(myGame.Puzzle);
 
 		}
