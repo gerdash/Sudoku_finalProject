@@ -6,7 +6,7 @@ namespace FinalProjectSudoku
 {
     class Levels
     {
-        //for now only 2 levels.To check how ths will work. This is work in progress...
+        //for now only 2 options for easy and medium levels.To check how ths will work. This is work in progress...
         string PathToEasyEmpty1_1 = @"C:\Users\Sandra Aunina\source\repos\Sudoku_finalProject\easyleveltxtfiles\EasyEmpty1.txt";
         string PathToEasySolution1_1 = @"C:\Users\Sandra Aunina\source\repos\Sudoku_finalProject\easyleveltxtfiles\EasySolution1.txt";
         string PathToEasyEmpty1_2 = @"C:\Users\Sandra Aunina\source\repos\Sudoku_finalProject\easyleveltxtfiles\EasyEmpty2.txt";
