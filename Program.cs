@@ -20,14 +20,10 @@ namespace FinalProjectSudoku
                 System.Threading.Thread.Sleep(400);
                 Console.Clear();
             }
-            InfoAboutGame();
+            InfoAboutGame(); //here added menu options to choose from (start, leaderboard, etc). We should add path what will follow when pressed...
+            Console.Clear();
             Console.WriteLine();
-            Console.WriteLine("Press Enter to start a new game!");
-            ConsoleKey result = Console.ReadKey().Key;
-            if (result == ConsoleKey.Enter)
-            {
-                //here Enter would leave to a place where we choose level/see grid/see keys
-            }
+            
            
             #endregion
             #region Adding a puzzle and a solution
@@ -179,23 +175,59 @@ namespace FinalProjectSudoku
 
         static void InfoAboutGame()
         {
-            Console.BackgroundColor = ConsoleColor.DarkMagenta;
-            Console.SetCursorPosition(25, 2);
-            Console.WriteLine("GAME  'SUDOKU'");
-            Console.SetCursorPosition(5, 4);
-            Console.ResetColor();
-            Console.ForegroundColor = ConsoleColor.DarkMagenta;
-            Console.WriteLine("What is Sudoku?");
-            Console.SetCursorPosition(8, 6);
-            Console.WriteLine("A sudoku puzzle is a grid of 9 X 9 cells, that has been subdivided into nine subgrids of 3 X 3 cells.");
-            Console.SetCursorPosition(8, 8);
-            Console.WriteLine("The objective of sudoku is to enter a digit from 1 through 9 in each cell, in such a way that:");
-            Console.SetCursorPosition(11, 9);
-            Console.WriteLine(" * Each horizontal row contains each digit exactly once");
-            Console.SetCursorPosition(11, 10);
-            Console.WriteLine(" * Each vertical column contains each digit exactly once");
-            Console.SetCursorPosition(11, 11);
-            Console.WriteLine(" * Each subgrid contains each digit exactly once");
+            
+            //here starts code for menu, to choose from given options.
+            int startposit = 0, counter1; // A variable to keep track of the current Item, counter.
+            ConsoleKeyInfo key; // to read key      
+            string[] menu = { "Start new game", "Leaderboard", "Exit" }; // array for menu  
+
+            do
+            {
+                Console.Clear(); //after each movement clear screen and then show again
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                Console.SetCursorPosition(25, 2);
+                Console.WriteLine("GAME  'SUDOKU'");
+                Console.SetCursorPosition(5, 4);
+                Console.WriteLine("What is Sudoku?");
+                Console.SetCursorPosition(8, 6);
+                Console.WriteLine("A sudoku puzzle is a grid of 9 X 9 cells, that has been subdivided into nine subgrids of 3 X 3 cells.");
+                Console.SetCursorPosition(8, 8);
+                Console.WriteLine("The objective of sudoku is to enter a digit from 1 through 9 in each cell, in such a way that:");
+                Console.SetCursorPosition(11, 9);
+                Console.WriteLine(" * Each horizontal row contains each digit exactly once");
+                Console.SetCursorPosition(11, 10);
+                Console.WriteLine(" * Each vertical column contains each digit exactly once");
+                Console.SetCursorPosition(11, 11);
+                Console.WriteLine(" * Each subgrid contains each digit exactly once");
+                Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("Please confirm your choice with  'ENTER'.");
+                // The loop that goes through all of the menu items.
+                for (counter1 = 0; counter1 < menu.Length; counter1++)
+                {
+                    if (startposit == counter1)
+                    {
+                        Console.Write(">>>>");
+                        Console.WriteLine(menu[counter1]);
+                    }
+                    else
+                    {
+                        Console.WriteLine(menu[counter1]);
+                    }
+                }
+                Console.Write("Select your choice with the arrow keys.");// Wait until user presses a key
+                key = Console.ReadKey(true);
+                if (key.Key.ToString() == "DownArrow")
+                {
+                    startposit++;
+                    if (startposit > menu.Length - 1) startposit = 0;
+                }
+                else if (key.Key.ToString() == "UpArrow")
+                {
+                    startposit--;
+                    if (startposit < 0) startposit = Convert.ToInt16(menu.Length - 1);//not to go above or below menu length       
+                }
+            } while (key.KeyChar != 13);// Loop around until the user presses the enter go.
             Console.ResetColor();
 
         }
