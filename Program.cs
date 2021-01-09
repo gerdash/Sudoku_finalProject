@@ -2,58 +2,57 @@
 
 namespace FinalProjectSudoku
 {
-	class Program
-	{
-		
+    class Program
+    {
 
-		static void Main(string[] args)
-		{
-		Console.SetWindowSize(90, 40);
+
+        static void Main(string[] args)
+        {
+            Console.SetWindowSize(90, 40);
 
             #region Intro by Sandra
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 2; i++)
             {
                 PrintSudokuHorizontal();
-                System.Threading.Thread.Sleep(400);
+                System.Threading.Thread.Sleep(300);
                 Console.Clear();
                 PrintSudoku();
-                System.Threading.Thread.Sleep(400);
+                System.Threading.Thread.Sleep(300);
                 Console.Clear();
             }
             InfoAboutGame(); //here added menu options to choose from (start, leaderboard, etc). We should add path what will follow when pressed...
-            Console.Clear();
             Console.WriteLine();
-            
-           
+
+
             #endregion
             #region Adding a puzzle and a solution
             //minimum 3 puzzles - easy / medium / hard all stored in a database of sorts puzzle + solution
             GameBoard myGame = new GameBoard();
 
-			myGame.Puzzle = new int[9, 9] { 
-														{ 7, 0, 4, 0, 0, 6, 0, 0, 9 }, 
-														{ 0, 8, 0, 0, 1, 0, 0, 0, 0 },
-														{0, 0, 3, 0, 2, 0, 4, 5, 0 },
-														{ 0, 0, 0, 0, 0, 0, 0, 0, 2},
-														{ 0, 5, 6, 0, 0, 0, 7, 8, 0},
-														{ 1, 0, 0, 0, 0, 0, 0, 0, 0},
-														{ 0, 2, 5, 0, 3, 0, 1, 0, 0},
-														{0, 0, 0, 0, 4, 0, 0, 6, 0 },
-														{ 9, 0, 0, 5, 0, 0, 3, 0, 7} 
-			};
+            myGame.Puzzle = new int[9, 9] {
+                                                        { 7, 0, 4, 0, 0, 6, 0, 0, 9 },
+                                                        { 0, 8, 0, 0, 1, 0, 0, 0, 0 },
+                                                        {0, 0, 3, 0, 2, 0, 4, 5, 0 },
+                                                        { 0, 0, 0, 0, 0, 0, 0, 0, 2},
+                                                        { 0, 5, 6, 0, 0, 0, 7, 8, 0},
+                                                        { 1, 0, 0, 0, 0, 0, 0, 0, 0},
+                                                        { 0, 2, 5, 0, 3, 0, 1, 0, 0},
+                                                        {0, 0, 0, 0, 4, 0, 0, 6, 0 },
+                                                        { 9, 0, 0, 5, 0, 0, 3, 0, 7}
+            };
 
-			//IF we have time, create a solver for the puzzles stored in the database, if not, another file with solutions
-			myGame.Solution = new int[9, 9] {
-														{ 7, 1, 4, 3, 5, 6, 8, 2, 9 },
-														{ 5, 8, 2, 4, 1, 9, 6, 7, 3 },
-														{6, 9, 3, 7, 2, 8, 4, 5, 1 },
-														{ 3, 7, 9, 8, 6, 4, 5, 1, 2},
-														{ 2, 5, 6, 1, 9, 3, 7, 8, 4},
-														{ 1, 4, 8, 2, 7, 5, 9, 3, 6},
-														{ 4, 2, 5, 6, 3, 7, 1, 9, 8},
-														{8, 3, 7, 9, 4, 1, 2, 6, 5 },
-														{ 9, 6, 1, 5, 8, 2, 3, 4, 7}
-			};
+            //IF we have time, create a solver for the puzzles stored in the database, if not, another file with solutions
+            myGame.Solution = new int[9, 9] {
+                                                        { 7, 1, 4, 3, 5, 6, 8, 2, 9 },
+                                                        { 5, 8, 2, 4, 1, 9, 6, 7, 3 },
+                                                        {6, 9, 3, 7, 2, 8, 4, 5, 1 },
+                                                        { 3, 7, 9, 8, 6, 4, 5, 1, 2},
+                                                        { 2, 5, 6, 1, 9, 3, 7, 8, 4},
+                                                        { 1, 4, 8, 2, 7, 5, 9, 3, 6},
+                                                        { 4, 2, 5, 6, 3, 7, 1, 9, 8},
+                                                        {8, 3, 7, 9, 4, 1, 2, 6, 5 },
+                                                        { 9, 6, 1, 5, 8, 2, 3, 4, 7}
+            };
             #endregion
             #region Stopwatch
             var timer = new Stopwatch();
@@ -62,7 +61,7 @@ namespace FinalProjectSudoku
             #endregion
             myGame.PrintGameBoard(myGame.Puzzle);
 
-		}
+        }
 
         static void PrintSudoku()
         {
@@ -175,14 +174,9 @@ namespace FinalProjectSudoku
 
         static void InfoAboutGame()
         {
-            
-            //here starts code for menu, to choose from given options.
-            int startposit = 0, counter1; // A variable to keep track of the current Item, counter.
-            ConsoleKeyInfo key; // to read key      
-            string[] menu = { "Start new game", "Leaderboard", "Exit" }; // array for menu  
 
-            do
-            {
+                
+             
                 Console.Clear(); //after each movement clear screen and then show again
                 Console.ForegroundColor = ConsoleColor.DarkMagenta;
                 Console.SetCursorPosition(25, 2);
@@ -201,39 +195,57 @@ namespace FinalProjectSudoku
                 Console.WriteLine(" * Each subgrid contains each digit exactly once");
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("Please confirm your choice with  'ENTER'.");
-                // The loop that goes through all of the menu items.
-                for (counter1 = 0; counter1 < menu.Length; counter1++)
-                {
-                    if (startposit == counter1)
-                    {
-                        Console.Write(">>>>");
-                        Console.WriteLine(menu[counter1]);
-                    }
-                    else
-                    {
-                        Console.WriteLine(menu[counter1]);
-                    }
-                }
-                Console.Write("Select your choice with the arrow keys.");// Wait until user presses a key
-                key = Console.ReadKey(true);
-                if (key.Key.ToString() == "DownArrow")
-                {
-                    startposit++;
-                    if (startposit > menu.Length - 1) startposit = 0;
-                }
-                else if (key.Key.ToString() == "UpArrow")
-                {
-                    startposit--;
-                    if (startposit < 0) startposit = Convert.ToInt16(menu.Length - 1);//not to go above or below menu length       
-                }
-            } while (key.KeyChar != 13);// Loop around until the user presses the enter go.
-            Console.ResetColor();
+            Console.WriteLine("Press:");
+            Console.WriteLine("1 - to start new game");
+            Console.WriteLine();
+            Console.WriteLine("2 - to see leaderboard");
+            Console.WriteLine();
+            Console.WriteLine("3 - to exit game");
+            Console.WriteLine();
+            string chosedmenuitem = Console.ReadLine();
 
+            switch (chosedmenuitem)
+            {
+                case "1":
+                    Console.WriteLine("start new game"); //here  we must paste method to start new game
+                    break;
+                case "2":
+                    Console.WriteLine("This woudld print leaderboard from txtt file"); //here  we must paste method to see leaderboard
+                    break;
+                case "3":
+                    exit(); 
+                    break;
+            }
+                    
+
+
+            static void exit()
+            {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Nooooooo.....don`t go away!");
+                Console.WriteLine("But if you are sure...");
+                Console.WriteLine("Pres 'Y' to exit or 'N' to go back to menu.");
+                string exityesno = Console.ReadLine();
+
+                switch (exityesno)
+                {
+                    case "y":
+                        Console.WriteLine("To close console press close button on the top right corner");
+                        break;
+                    case "Y":
+                        Console.WriteLine("To close console press close button on the top right corner");
+                        break;
+                    case "n":
+                        InfoAboutGame();
+                        break;
+                    case "N":
+                        InfoAboutGame();
+                        break;
+                }
+                System.Threading.Thread.Sleep(100000000);
+            }
         }
-        
     }
-    
-
-
 }
+
