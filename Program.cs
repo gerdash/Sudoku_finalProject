@@ -22,7 +22,7 @@ namespace FinalProjectSudoku
                 System.Threading.Thread.Sleep(300);
                 Console.Clear();
             }
-            InfoAboutGame(); //here added menu options to choose from (start, leaderboard, etc). We should add path what will follow when pressed...
+            InfoAboutGame();
             Console.WriteLine();
 
 
@@ -148,7 +148,7 @@ namespace FinalProjectSudoku
 
 
 
-        }
+        } //visuazlization for game intro
 
         static void PrintSudokuHorizontal()
         {
@@ -172,7 +172,7 @@ namespace FinalProjectSudoku
             Console.SetCursorPosition(2, 10);
             Console.WriteLine("OOOOO     OOO     OOOOO    OOOOO    O   OO    OOO");
 
-        }
+        } //visuazlization for game intro
 
         static void InfoAboutGame()
         {
@@ -209,7 +209,7 @@ namespace FinalProjectSudoku
             switch (chosedmenuitem)
             {
                 case "1":
-                    Console.WriteLine("start new game"); //here  we must paste method or something to start new game
+                    choseLevel();
                     break;
                 case "2":
                     readFromLeaderboard();
@@ -224,6 +224,41 @@ namespace FinalProjectSudoku
             
             
             
+        } 
+        static void choseLevel() //should add path from each level, to startgame
+        {
+            Console.Clear();
+            PrintSudokuHorizontal();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Please choose one of below mentioned levels:");
+            Console.WriteLine("Press '1' for EASY Sudoku");
+            Console.WriteLine("Press '2' for MEDIUM Sudoku");
+            Console.WriteLine("Press '3' for HARD Sudoku");
+            Console.WriteLine();
+            Console.WriteLine("To go back to menu press 'N'.");
+            string levelchose = Console.ReadLine();
+            switch (levelchose)
+            {
+                case "1":
+                    Console.WriteLine("You chosed easy"); //add method here which leads to easy level
+                    break;
+                case "2":
+                    Console.WriteLine("You chosed medium"); //add method here
+                    break;
+                case "3":
+                    Console.WriteLine("You chosed hard"); //add method here
+                    break;
+                case "N":
+                    InfoAboutGame();
+                    break;
+                case "n":
+                    InfoAboutGame();
+                    break;
+
+            }
+            Console.ResetColor();
         }
         static void exit()
         {
@@ -259,9 +294,22 @@ namespace FinalProjectSudoku
             {
                 Console.WriteLine(item);
             }
-            Console.WriteLine();
+            Console.WriteLine("Press 'M' to return to menu.");
+            string backtomenu = Console.ReadLine();
+
+            switch (backtomenu)
+            {
+                
+                case "m":
+                    InfoAboutGame();
+                    break;
+                case "M":
+                    InfoAboutGame();
+                    break;
+            }
+            System.Threading.Thread.Sleep(100000000);
         }
-        static void addToLeaderboard()
+        static void addToLeaderboard() //not finished
         {
 
             string leaderboard = @"C:\Users\Sandra Aunina\source\repos\Sudoku_finalProject\Leaderboard.txt";
@@ -271,6 +319,7 @@ namespace FinalProjectSudoku
             for (int i = 0; i < 50; i++)
             {
                 //here would be something like file.write(i + playersname + time from timer). No idea how to make asc order by fastest time 
+                
             }
 
 

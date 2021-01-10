@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace FinalProjectSudoku
@@ -52,7 +53,7 @@ namespace FinalProjectSudoku
             //check solution
             //progress
 
-        }
+        } //not completed
 
         public void PrintGameBoard(int[,] puzzle)
         {
@@ -103,6 +104,27 @@ namespace FinalProjectSudoku
             }
 
         }
+        //public string PathToEasyEmpty1_1 = @"C:\Users\Sandra Aunina\source\repos\Sudoku_finalProject\easyleveltxtfiles\EasyEmpty1.txt";
+        //public void numbersFromFile()
+        //{
+        //    //take numbers from file and inserts it into int array. Numbers are seperated with empty space
+        //    //in file they are as strings, used parse
+        //    StreamReader numbers11 = new StreamReader(PathToEasyEmpty1_1);
+        //    for (int i = 0; i < 9; i++)
+        //    {
+        //        string numbra = numbers11.ReadLine();
+        //        string[] numbrb = new string[9];
+        //        numbrb = numbra.Split(" ");
+        //        for (int j = 0; j < 9; j++)
+        //        {
+        //            Puzzle[i, j] = int.Parse(numbrb[j]);
+        //            Console.Write(Puzzle[i,j]);
+
+        //        }
+        //        Console.WriteLine();
+        //    }
+        //    numbers11.Close();
+        //}
         private static bool GameFinished(int[,] puzzle, int[,] solution) //kind of works but probably needs edits
         {
             for (int i = 0; i < puzzle.GetLength(0); i++)
