@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+
 
 namespace FinalProjectSudoku
 {
@@ -11,7 +13,7 @@ namespace FinalProjectSudoku
             Console.SetWindowSize(90, 40);
 
             #region Intro by Sandra
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 2; i++) //sudoku intro visualisation movement
             {
                 PrintSudokuHorizontal();
                 System.Threading.Thread.Sleep(300);
@@ -207,10 +209,10 @@ namespace FinalProjectSudoku
             switch (chosedmenuitem)
             {
                 case "1":
-                    Console.WriteLine("start new game"); //here  we must paste method to start new game
+                    Console.WriteLine("start new game"); //here  we must paste method or something to start new game
                     break;
                 case "2":
-                    Console.WriteLine("This woudld print leaderboard from txtt file"); //here  we must paste method to see leaderboard
+                    readFromLeaderboard();
                     break;
                 case "3":
                     exit(); 
@@ -219,32 +221,60 @@ namespace FinalProjectSudoku
                     
 
 
-            static void exit()
-            {
-                Console.Clear();
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Nooooooo.....don`t go away!");
-                Console.WriteLine("But if you are sure...");
-                Console.WriteLine("Pres 'Y' to exit or 'N' to go back to menu.");
-                string exityesno = Console.ReadLine();
+            
+            
+            
+        }
+        static void exit()
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Nooooooo.....don`t go away!");
+            Console.WriteLine("We hope you changed your mind.");
+            Console.WriteLine("Press 'Y' to exit or 'N' to go back to menu and enjoy game!");
+            string exityesno = Console.ReadLine();
 
-                switch (exityesno)
-                {
-                    case "y":
-                        Console.WriteLine("To close console press close button on the top right corner");
-                        break;
-                    case "Y":
-                        Console.WriteLine("To close console press close button on the top right corner");
-                        break;
-                    case "n":
-                        InfoAboutGame();
-                        break;
-                    case "N":
-                        InfoAboutGame();
-                        break;
-                }
-                System.Threading.Thread.Sleep(100000000);
+            switch (exityesno)
+            {
+                case "y":
+                    Console.WriteLine("To close console press close button on the top right corner");
+                    break;
+                case "Y":
+                    Console.WriteLine("To close console press close button on the top right corner");
+                    break;
+                case "n":
+                    InfoAboutGame();
+                    break;
+                case "N":
+                    InfoAboutGame();
+                    break;
             }
+            System.Threading.Thread.Sleep(100000000);
+        }
+        static void readFromLeaderboard()
+        {
+            string leaderboard = @"C:\Users\Sandra Aunina\source\repos\Sudoku_finalProject\Leaderboard.txt";
+            string[] leaderboardlines = File.ReadAllLines(leaderboard);
+            foreach (var item in leaderboardlines)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine();
+        }
+        static void addToLeaderboard()
+        {
+
+            string leaderboard = @"C:\Users\Sandra Aunina\source\repos\Sudoku_finalProject\Leaderboard.txt";
+            using (System.IO.StreamWriter file = new StreamWriter(leaderboard, true))
+                file.WriteLine("Leaderboard");
+
+            for (int i = 0; i < 50; i++)
+            {
+                //here would be something like file.write(i + playersname + time from timer). No idea how to make asc order by fastest time 
+            }
+
+
+
         }
     }
 }
