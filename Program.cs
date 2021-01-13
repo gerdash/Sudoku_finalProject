@@ -23,41 +23,41 @@ namespace inspo_maze
 
 
             #endregion
-            #region Adding a puzzle and a solution
+            
             //minimum 3 puzzles - easy / medium / hard all stored in a database of sorts puzzle + solution
-            GameBoard myGame = new GameBoard();
+            //GameBoard myGame = new GameBoard();
 
-            myGame.Puzzle = new int[9, 9] {
-                                                        { 7, 0, 4, 0, 0, 6, 0, 0, 9 },
-                                                        { 0, 8, 0, 0, 1, 0, 0, 0, 0 },
-                                                        {0, 0, 3, 0, 2, 0, 4, 5, 0 },
-                                                        { 0, 0, 0, 0, 0, 0, 0, 0, 2},
-                                                        { 0, 5, 6, 0, 0, 0, 7, 8, 0},
-                                                        { 1, 0, 0, 0, 0, 0, 0, 0, 0},
-                                                        { 0, 2, 5, 0, 3, 0, 1, 0, 0},
-                                                        {0, 0, 0, 0, 4, 0, 0, 6, 0 },
-                                                        { 9, 0, 0, 5, 0, 0, 3, 0, 7}
-            };
+            //myGame.Puzzle = new int[9, 9] {
+            //                                            { 7, 0, 4, 0, 0, 6, 0, 0, 9 },
+            //                                            { 0, 8, 0, 0, 1, 0, 0, 0, 0 },
+            //                                            {0, 0, 3, 0, 2, 0, 4, 5, 0 },
+            //                                            { 0, 0, 0, 0, 0, 0, 0, 0, 2},
+            //                                            { 0, 5, 6, 0, 0, 0, 7, 8, 0},
+            //                                            { 1, 0, 0, 0, 0, 0, 0, 0, 0},
+            //                                            { 0, 2, 5, 0, 3, 0, 1, 0, 0},
+            //                                            {0, 0, 0, 0, 4, 0, 0, 6, 0 },
+            //                                            { 9, 0, 0, 5, 0, 0, 3, 0, 7}
+            //};
 
-            //IF we have time, create a solver for the puzzles stored in the database, if not, another file with solutions
-            myGame.Solution = new int[9, 9] {
-                                                        { 7, 1, 4, 3, 5, 6, 8, 2, 9 },
-                                                        { 5, 8, 2, 4, 1, 9, 6, 7, 3 },
-                                                        {6, 9, 3, 7, 2, 8, 4, 5, 1 },
-                                                        { 3, 7, 9, 8, 6, 4, 5, 1, 2},
-                                                        { 2, 5, 6, 1, 9, 3, 7, 8, 4},
-                                                        { 1, 4, 8, 2, 7, 5, 9, 3, 6},
-                                                        { 4, 2, 5, 6, 3, 7, 1, 9, 8},
-                                                        {8, 3, 7, 9, 4, 1, 2, 6, 5 },
-                                                        { 9, 6, 1, 5, 8, 2, 3, 4, 7}
-            };
-            #endregion
-            #region Stopwatch
-            var timer = new Stopwatch();
-            timer.Start();
-            timer.Stop();
-            #endregion
-            myGame.PrintGameBoard(myGame.Puzzle);
+            ////IF we have time, create a solver for the puzzles stored in the database, if not, another file with solutions
+            //myGame.Solution = new int[9, 9] {
+            //                                            { 7, 1, 4, 3, 5, 6, 8, 2, 9 },
+            //                                            { 5, 8, 2, 4, 1, 9, 6, 7, 3 },
+            //                                            {6, 9, 3, 7, 2, 8, 4, 5, 1 },
+            //                                            { 3, 7, 9, 8, 6, 4, 5, 1, 2},
+            //                                            { 2, 5, 6, 1, 9, 3, 7, 8, 4},
+            //                                            { 1, 4, 8, 2, 7, 5, 9, 3, 6},
+            //                                            { 4, 2, 5, 6, 3, 7, 1, 9, 8},
+            //                                            {8, 3, 7, 9, 4, 1, 2, 6, 5 },
+            //                                            { 9, 6, 1, 5, 8, 2, 3, 4, 7}
+            //};
+            //#endregion
+            //#region Stopwatch
+            //var timer = new Stopwatch();
+            //timer.Start();
+            //timer.Stop();
+            //#endregion
+            //myGame.PrintGameBoard(myGame.Puzzle);
 
         }
 
@@ -208,7 +208,9 @@ namespace inspo_maze
                     choseLevel();
                     break;
                 case "2":
-                    readFromLeaderboard();
+                    Console.Clear();
+                    Console.WriteLine("Leaderboard coming soon...");
+                    BackToMenu();
                     break;
                 case "3":
                     exit(); 
@@ -282,50 +284,66 @@ namespace inspo_maze
             }
             System.Threading.Thread.Sleep(1000000);
         }
-        static void readFromLeaderboard()
+        static void BackToMenu()
         {
-            string leaderboard = @"C:\Users\Sandra Aunina\source\repos\Sudoku_finalProject\Leaderboard.txt";
-            string[] leaderboardlines = File.ReadAllLines(leaderboard);
-            foreach (var item in leaderboardlines)
-            {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine("Press 'M' to return to menu.");
+            Console.WriteLine("Press 'N' to go back to menu and enjoy game!");
             string backtomenu = Console.ReadLine();
-
             switch (backtomenu)
             {
                 
-                case "m":
+                case "N":
                     InfoAboutGame();
                     break;
-                case "M":
+                case "n":
                     InfoAboutGame();
                     break;
-            }
-            System.Threading.Thread.Sleep(1000000);
-        }
-        static void addToLeaderboard() //not finished
-        {
 
-            string leaderboard = @"C:\Users\Sandra Aunina\source\repos\Sudoku_finalProject\Leaderboard.txt";
-            using (System.IO.StreamWriter file = new StreamWriter(leaderboard, true))
-                file.WriteLine("Leaderboard");
-            
-            for (int i = 0; i < 50; i++)
-            {
-                //here would be something like file.write(i + playersname + time from timer). No idea how to make asc order by fastest time 
+            }
+        }
+        //static void readFromLeaderboard()
+        //{
+        //    string leaderboard = @"C:\Users\Sandra Aunina\source\repos\Sudoku_finalProject\Leaderboard.txt";
+        //    string[] leaderboardlines = File.ReadAllLines(leaderboard);
+        //    foreach (var item in leaderboardlines)
+        //    {
+        //        Console.WriteLine(item);
+        //    }
+        //    Console.WriteLine("Press 'M' to return to menu.");
+        //    string backtomenu = Console.ReadLine();
+
+        //    switch (backtomenu)
+        //    {
                 
-            }
+        //        case "m":
+        //            InfoAboutGame();
+        //            break;
+        //        case "M":
+        //            InfoAboutGame();
+        //            break;
+        //    }
+        //    System.Threading.Thread.Sleep(1000000);
+        //}
+        //static void addToLeaderboard() //not finished
+        //{
+
+        //    string leaderboard = @"C:\Users\Sandra Aunina\source\repos\Sudoku_finalProject\Leaderboard.txt";
+        //    using (System.IO.StreamWriter file = new StreamWriter(leaderboard, true))
+        //        file.WriteLine("Leaderboard");
+            
+        //    for (int i = 0; i < 50; i++)
+        //    {
+        //        //here would be something like file.write(i + playersname + time from timer). No idea how to make asc order by fastest time 
+                
+        //    }
 
 
 
-        }
+        //}
     }
 }
 
-            Game myGame = new Game();
-            myGame.Start();
-        }
-    }
-}
+//            Game myGame = new Game();
+//            myGame.Start();
+//        }
+//    }
+//}
