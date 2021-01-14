@@ -9,7 +9,6 @@ namespace inspo_maze
     {
         private World MyWorld;
         private Player CurrentPlayer;
-        //add grid as a property - new class for grids
         public List<string> UserInputs { get; set; } = new List<string>();
         public List<int> Hints = new List<int>();
 
@@ -17,12 +16,13 @@ namespace inspo_maze
         {
             Console.Title = "THE BEST SUDOKU EVER!";
 
+            DisplayIntro();
             string[,] grid = LevelParser.ParseFileToArray("Level1.txt");
             MyWorld = new World(grid);
             MyWorld.GridSolution = LevelParser.ParseFileToArray("Level1Solution.txt");
             //MyWorld.GeneralFrame = LevelParser.ParseFileToArray("Frame.txt");
             CurrentPlayer = new Player(5, 2);
-            DisplayIntro();
+            
             RunGameLoop(grid, MyWorld.GridSolution, Hints, MyWorld.GeneralFrame);
             Console.ReadKey(true);
             
@@ -371,13 +371,14 @@ namespace inspo_maze
             switch (levelchose)
             {
                 case "1":
-                    Console.WriteLine("You chosed easy"); //add method here which leads to easy level
+                    Console.WriteLine("You chose easy");
+                    //add method here which leads to easy level
                     break;
                 case "2":
-                    Console.WriteLine("You chosed medium"); //add method here
+                    Console.WriteLine("You chose medium"); //add method here
                     break;
                 case "3":
-                    Console.WriteLine("You chosed hard"); //add method here
+                    Console.WriteLine("You chose hard"); //add method here
                     break;
                 case "N":
                     InfoAboutGame();
@@ -389,6 +390,20 @@ namespace inspo_maze
             }
             Console.ResetColor();
         }
+
+        //public string[,] LevelChoice()
+        //{
+        //    ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+        //    ConsoleKey key = keyInfo.Key;
+        //    switch (key)
+        //    {
+        //        case ConsoleKey.NumPad1
+
+
+        //        default:
+        //    }
+
+        //}
         static void exit()
         {
             Console.Clear();
@@ -421,7 +436,6 @@ namespace inspo_maze
             string backtomenu = Console.ReadLine();
             switch (backtomenu)
             {
-
                 case "N":
                     InfoAboutGame();
                     break;
