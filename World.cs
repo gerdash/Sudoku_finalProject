@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace inspo_maze
 {
@@ -24,6 +25,7 @@ namespace inspo_maze
 
         public void Draw()
         {
+            int counter = 0;
             GeneralFrame = LevelParser.ParseFileToArray("Frame.txt");
             Console.SetWindowSize(GeneralFrame.GetLength(1), GeneralFrame.GetLength(0));
             for (int y = 0; y < GeneralFrame.GetLength(0); y++)
@@ -37,12 +39,36 @@ namespace inspo_maze
                     Console.ResetColor();
                 }
             }
-            GridUnchanged = LevelParser.ParseFileToArray("TextFile1.txt");
+            GridUnchanged = LevelParser.ParseFileToArray("TextFile1.txt"); //šito droši vien vajag pie līmeņiem izdarīt
             //Console.SetWindowSize(Columns, Rows);
             for (int y = 0; y < Rows; y++)
             {
                 for (int x = 0; x < Columns; x++)
                 {
+
+                    //if (Grid[y, x] == "1")
+                    //{
+                    //    Console.SetCursorPosition(0, 0);
+                    //    Console.WriteLine(counter++);
+                    //    if (counter == 9)
+                    //    {
+                    //        Console.SetCursorPosition(0, 0);
+                    //        Console.WriteLine("No more ones!");
+                    //    }
+                    //}
+                    if (Grid[y, x] == "2")
+                    {
+                        Console.SetCursorPosition(0, 0);
+                        counter++;
+
+                        if (counter == 9)
+                        {
+                            Console.SetCursorPosition(0, 0);
+                            Console.WriteLine("No more twos!");
+                            break;
+                        }
+                    }
+
                     string initialElement = GridUnchanged[y, x];
                     string element = Grid[y, x];
                     Console.SetCursorPosition(x, y);
@@ -50,7 +76,6 @@ namespace inspo_maze
                     if (element != initialElement) //need to color userinputs differently
                     {
                         Console.ForegroundColor = ConsoleColor.Yellow;
-                        Console.BackgroundColor = ConsoleColor.Magenta;
                         Console.Write($"{element}");
                         Console.ResetColor();
                     }
@@ -67,9 +92,25 @@ namespace inspo_maze
                         Console.Write($" ");
                         Console.ResetColor();
                     }
+                   
                 }
             }
-        
+        }
+
+        public void CountNumbers(string element, string[,] grid, int y, int x)
+        {
+            int counter = 1;
+            if (grid[y, x] == element)
+            {
+                Console.SetCursorPosition(0, 0);
+                Console.WriteLine(counter++);
+                if (counter == 9)
+                {
+                    Console.SetCursorPosition(0, 0);
+                    Console.WriteLine("No more {element}!");
+                }
+            }
+
         }
 
         //public string GetElement(int x, int y)

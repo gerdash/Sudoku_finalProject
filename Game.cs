@@ -155,13 +155,8 @@ namespace inspo_maze
                     break;
                     default:
                         break;
-                }
-              
-
-            
-           
+            }
         }
-
         
         private void RunGameLoop(string[,] grid, string[,] gridSolution, List<int> Hints, string[,] generalGrid)
         {
@@ -170,9 +165,11 @@ namespace inspo_maze
                 //Draw everything
                 DrawFrame(grid);
                 //Check player input
+              
                 HandlePlayerInput(grid, gridSolution, Hints);
                 //Check if the player has reached the exit and end the game if so
                 //string elementAtPlayerPos = MyWorld.GetElement(CurrentPlayer.X, CurrentPlayer.Y);
+                Console.SetCursorPosition(0, 0);
                 
                 int counter = 0;
                 for (int y = 0; y < grid.GetLength(0); y++)
