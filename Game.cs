@@ -16,7 +16,7 @@ namespace inspo_maze
         {
             Console.Title = "THE BEST SUDOKU EVER!";
 
-            DisplayIntro();
+            //DisplayIntro();
             string[,] grid = LevelParser.ParseFileToArray("Level1.txt");
             MyWorld = new World(grid);
             MyWorld.GridSolution = LevelParser.ParseFileToArray("Level1Solution.txt");
@@ -95,26 +95,31 @@ namespace inspo_maze
                             int x = CurrentPlayer.X;
                             int y = CurrentPlayer.Y;
                             string answer = gridSolution[CurrentPlayer.Y, CurrentPlayer.X];
-                            while (grid[y, x] == "0")
+
+                            if (grid[y, x] == "0")
                             {
                                 Console.SetCursorPosition(x, y);
                                 string input = Console.ReadLine();
                                 if (input == answer)
                                 {
-                                    Console.SetCursorPosition(x, y);
-                                    Console.WriteLine("Success!");
-                                    System.Threading.Thread.Sleep(400);
-                                    grid[y, x] = input;
-                                    UserInputs.Add(input);
-                            }
+                                Console.SetCursorPosition(55, 24);
+                                Console.ForegroundColor = ConsoleColor.Yellow;
+                                Console.WriteLine("Success!");
+                                Console.ResetColor();
+                                System.Threading.Thread.Sleep(400);
+                                grid[y, x] = input;
+                                UserInputs.Add(input);
+                                }
                                 else
                                 {
-                                    Console.SetCursorPosition(x, y);
-                                    Console.WriteLine("Your input was incorrect!");
-                                    System.Threading.Thread.Sleep(400);
-                                    break;
+                                Console.SetCursorPosition(53, 24);
+                                Console.ForegroundColor = ConsoleColor.Yellow;
+                                Console.WriteLine("Wrong number!");
+                                Console.ResetColor();
+                                System.Threading.Thread.Sleep(400);
                                 }
-                            }
+
+                            }  
                         }
                         break;
                     case ConsoleKey.H:
@@ -176,23 +181,19 @@ namespace inspo_maze
                     {
                         if (grid[y,x] == gridSolution[y,x])
                         {
-                          
                             counter++;
+                        }
+                        if (counter == grid.GetLength(0) * grid.GetLength(1))
+                        {
+                            System.Threading.Thread.Sleep(2000);
+                            Console.Clear();
+                            YouWonvisualisation();
+                            break;
                         }
 
                     }
-
-                    if (counter == grid.GetLength(0)*grid.GetLength(1))
-                    {
-                        System.Threading.Thread.Sleep(2000);
-                        Console.Clear();
-                        YouWonvisualisation();
-                        break;
-                    }
-
                 }
 
-             
 
             }
         }
