@@ -186,7 +186,7 @@ namespace inspo_maze
                     {
                         System.Threading.Thread.Sleep(2000);
                         Console.Clear();
-                        Console.WriteLine("You've won!");
+                        YouWonvisualisation();
                         break;
                     }
 
@@ -446,6 +446,27 @@ namespace inspo_maze
                     break;
 
             }
+        }
+        static void YouWonvisualisation()
+        {
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.SetCursorPosition(2, 1);
+            Console.WriteLine("O   O    OOOOO    O   O       O   O    OOOOO    O OOO");
+            Console.SetCursorPosition(1, 2);
+            Console.WriteLine("OO   OO  OOO OOO  OO   OO     OO O OO  OOO OOO  OOOOOOO");
+            Console.SetCursorPosition(1, 3);
+            Console.WriteLine("OO   OO  OO   OO  OO   OO     OO O OO  OO   OO  OO  OOO");
+            Console.SetCursorPosition(2, 4);
+            Console.WriteLine("OO OOO  OO   OO  OO   OO     OO O OO  OO   OO  OO   OO");
+            Console.SetCursorPosition(3, 5);
+            Console.WriteLine("OOOOO  OO   OO  OO   OO     OO O OO  OO   OO  OO   OO");
+            Console.SetCursorPosition(1, 6);
+            Console.WriteLine("O    OO  OO   OO  OO   OO     OO O OO  OO   OO  OO   OO");
+            Console.SetCursorPosition(1, 7);
+            Console.WriteLine("OOO OOO  OOO OOO  OOO OOO     OOOOOOO  OOO OOO  OO   OO");
+            Console.SetCursorPosition(2, 8);
+            Console.WriteLine("OOOOO    OOOOO    OOOOO       OO OO    OOOOO    O   O");
+
         }
     }
 }
