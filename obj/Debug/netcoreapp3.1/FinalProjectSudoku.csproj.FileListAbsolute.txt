@@ -26,4 +26,4 @@ C:\Users\Gerda\Documents\GitHub\Sudoku_finalProject\obj\Debug\netcoreapp3.1\Fina
 C:\Users\Gerda\Documents\GitHub\Sudoku_finalProject\obj\Debug\netcoreapp3.1\FinalProjectSudoku.genruntimeconfig.cache
 C:\Users\Gerda\Documents\GitHub\Sudoku_finalProject\bin\Debug\netcoreapp3.1\Level1.txt
 C:\Users\Gerda\Documents\GitHub\Sudoku_finalProject\bin\Debug\netcoreapp3.1\Level1Solution.txt
-C:\Users\Gerda\Documents\GitHub\Sudoku_finalProject\bin\Debug\netcoreapp3.1\GeneralFrame.txt
+C:\Users\Gerda\Documents\GitHub\Sudoku_finalProject\bin\Debug\netcoreapp3.1\Frame.txt

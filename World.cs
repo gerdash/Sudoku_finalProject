@@ -23,25 +23,27 @@ namespace inspo_maze
 
         public void Draw()
         {
-            for (int y = 0; y < GeneralFrame.GetLength(0); y++)
-            {
-                for (int x = 0; x < GeneralFrame.GetLength(1); x++)
-                {
-                    string element = GeneralFrame[y, x];
-                    Console.SetCursorPosition(x, y);
-                    Console.Write(element);
+            
+            //for (int y = 0; y < GeneralFrame.GetLength(0); y++)
+            //{
+            //    for (int x = 0; x < GeneralFrame.GetLength(1); x++)
+            //    {
+            //        string element = GeneralFrame[y, x];
+            //        Console.SetCursorPosition(x, y);
+            //        Console.Write(element);
 
-                }
+            //    }
 
-            }
+            //}
 
             //Console.SetWindowSize(Columns, Rows);
             for (int y = 0; y < Rows; y++)
             {
                 for (int x = 0; x < Columns; x++)
                 {
+                    
                     string element = Grid[y, x];
-                    Console.SetCursorPosition(x + 3, y + 4);
+                    Console.SetCursorPosition(x, y);
                     if (element != "0")
                     {
                         Console.ForegroundColor = ConsoleColor.Cyan;
@@ -49,7 +51,7 @@ namespace inspo_maze
                         Console.Write($"{element}");
                         Console.ResetColor();
                     }
-                    //else if () //need to color userinputs differently
+                    //else if (element != comparisonElement) //need to color userinputs differently
                     //{
                     //    Console.ForegroundColor = ConsoleColor.Yellow;
                     //    Console.BackgroundColor = ConsoleColor.Magenta;
@@ -91,7 +93,7 @@ namespace inspo_maze
 
         public bool IsPositionEmpty(int x, int y)
         {
-            if (x < 4 || y < 1 || x >= Columns-5 || y >= Rows-2) //establishing that the cursor positions exist, if not the person cannot go there/put the input there
+            if (x < 4 || y < 1 || x >= Columns-4 || y >= Rows-8) //establishing that the cursor positions exist, if not the person cannot go there/put the input there
             {
                 //set the cursor before where we want the error message
                 Console.WriteLine("You are out of bounds of the game!");
