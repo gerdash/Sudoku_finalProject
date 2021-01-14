@@ -24,14 +24,16 @@ namespace inspo_maze
         public void Draw()
         {
             GeneralFrame = LevelParser.ParseFileToArray("Frame.txt");
-
+            Console.SetWindowSize(GeneralFrame.GetLength(1), GeneralFrame.GetLength(0));
             for (int y = 0; y < GeneralFrame.GetLength(0); y++)
             {
                 for (int x = 0; x < GeneralFrame.GetLength(1); x++)
                 {
                     string element = GeneralFrame[y, x];
                     Console.SetCursorPosition(x, y);
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.Write($"{element}");
+                    Console.ResetColor();
                 }
             }
 
@@ -76,7 +78,7 @@ namespace inspo_maze
 
         public bool IsPositionEmpty(int x, int y)
         {
-            if (x < 4 || y < 1 || x >= Columns-4 || y >= Rows-8) //establishing that the cursor positions exist, if not the person cannot go there/put the input there
+            if (x < 4 || y < 1 || x >= Columns-2 || y >= Rows-2) //establishing that the cursor positions exist, if not the person cannot go there/put the input there
             {
                 //set the cursor before where we want the error message
                 Console.WriteLine("You are out of bounds of the game!");

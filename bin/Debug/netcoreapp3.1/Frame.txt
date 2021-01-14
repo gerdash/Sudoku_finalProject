@@ -2,21 +2,21 @@
 |                                                                        |
 |                                              Control keys:             |
 |                                                                        |
-|                                              down arrow + move down    |
+|                                              down arrow - move down    |
 |                                                                        |
-|                                              right arrow + move right  |
+|                                              right arrow - move right  |
 |                                                                        |
-|                                              left arrow + move left    |
+|                                              left arrow - move left    |
 |                                                                        |
-|                                              H + hint                  |
+|                                              H - hint                  |
 |                                                                        |
-|                                              Tab + number + input      |
+|                                              Tab - number input        |
 |                                                                        |
 |                                              Esc - quit game           |
 |                                                                        |
-|                                              N + new puzzle            |
+|                                              N - new puzzle            |
 |                                                                        |
-|                                              R + redraw                |
+|                                              R - redraw                |
 |                                                                        |
 |                                                                        |
 |  Elements                                                              |
