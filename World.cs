@@ -23,18 +23,17 @@ namespace inspo_maze
 
         public void Draw()
         {
-            
-            //for (int y = 0; y < GeneralFrame.GetLength(0); y++)
-            //{
-            //    for (int x = 0; x < GeneralFrame.GetLength(1); x++)
-            //    {
-            //        string element = GeneralFrame[y, x];
-            //        Console.SetCursorPosition(x, y);
-            //        Console.Write(element);
+            GeneralFrame = LevelParser.ParseFileToArray("Frame.txt");
 
-            //    }
-
-            //}
+            for (int y = 0; y < GeneralFrame.GetLength(0); y++)
+            {
+                for (int x = 0; x < GeneralFrame.GetLength(1); x++)
+                {
+                    string element = GeneralFrame[y, x];
+                    Console.SetCursorPosition(x, y);
+                    Console.Write($"{element}");
+                }
+            }
 
             //Console.SetWindowSize(Columns, Rows);
             for (int y = 0; y < Rows; y++)
@@ -69,22 +68,6 @@ namespace inspo_maze
             }
         
         }
-
-        //public void DrawLayout(string[,] generalGrid)
-        //{
-        //    //Console.SetWindowSize(Columns, Rows);
-        //    for (int y = 0; y < generalGrid.GetLength(0); y++)
-        //    {
-        //        for (int x = 0; x < generalGrid.GetLength(1); x++)
-        //        {
-        //            string element = generalGrid[y, x];
-        //            Console.SetCursorPosition(x, y);
-        //            Console.Write(element);
-
-        //        }
-
-        //    }
-        //}
 
         //public string GetElement(int x, int y)
         //{

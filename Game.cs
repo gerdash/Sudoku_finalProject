@@ -25,7 +25,6 @@ namespace inspo_maze
             
             RunGameLoop(grid, MyWorld.GridSolution, Hints, MyWorld.GeneralFrame);
             Console.ReadKey(true);
-            
         }
 
         private void DisplayIntro()
@@ -52,7 +51,6 @@ namespace inspo_maze
             Console.Clear();
             MyWorld.Draw();
             CurrentPlayer.Draw(grid);
-
         }
     
         private void HandlePlayerInput(string [,] grid, string[,] gridSolution, List<int> Hints)
@@ -372,7 +370,7 @@ namespace inspo_maze
             {
                 case "1":
                     Console.WriteLine("You chose easy");
-                    //add method here which leads to easy level
+                    
                     break;
                 case "2":
                     Console.WriteLine("You chose medium"); //add method here
@@ -397,11 +395,15 @@ namespace inspo_maze
         //    ConsoleKey key = keyInfo.Key;
         //    switch (key)
         //    {
-        //        case ConsoleKey.NumPad1
-
+        //        case ConsoleKey.NumPad1:
+        //            return LevelParser.ParseFileToArray("Level1.txt");
+        //            break;
 
         //        default:
+        //            break;
         //    }
+        //    return null;
+
 
         //}
         static void exit()
