@@ -391,19 +391,22 @@ namespace inspo_maze
             Console.ResetColor();
         }
 
-        //public string[,] LevelChoice()
-        //{
-        //    ConsoleKeyInfo keyInfo = Console.ReadKey(true);
-        //    ConsoleKey key = keyInfo.Key;
-        //    switch (key)
-        //    {
-        //        case ConsoleKey.NumPad1
+        public string[,] LevelChoice()
+        {
+            ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+            ConsoleKey key = keyInfo.Key;
+            switch (key)
+            {
+                case ConsoleKey.NumPad1:
+                    return LevelParser.ParseFileToArray("Level1.txt");
+                    break;
+                default:
+                    break;
+            }
+            return null;
 
 
-        //        default:
-        //    }
-
-        //}
+        }
         static void exit()
         {
             Console.Clear();
