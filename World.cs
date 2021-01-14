@@ -10,6 +10,9 @@ namespace inspo_maze
         public string[,] GridSolution { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
+        public string[,] GeneralFrame { get; set; }
+
+        //public List<string> UserInputs { get; set; } = new List<string>();
 
         public World(string[,] grid)
         {
@@ -20,13 +23,25 @@ namespace inspo_maze
 
         public void Draw()
         {
+            for (int y = 0; y < GeneralFrame.GetLength(0); y++)
+            {
+                for (int x = 0; x < GeneralFrame.GetLength(1); x++)
+                {
+                    string element = GeneralFrame[y, x];
+                    Console.SetCursorPosition(x, y);
+                    Console.Write(element);
+
+                }
+
+            }
+
             //Console.SetWindowSize(Columns, Rows);
             for (int y = 0; y < Rows; y++)
             {
                 for (int x = 0; x < Columns; x++)
                 {
                     string element = Grid[y, x];
-                    Console.SetCursorPosition(x, y);
+                    Console.SetCursorPosition(x + 3, y + 4);
                     if (element != "0")
                     {
                         Console.ForegroundColor = ConsoleColor.Cyan;
@@ -34,6 +49,13 @@ namespace inspo_maze
                         Console.Write($"{element}");
                         Console.ResetColor();
                     }
+                    //else if () //need to color userinputs differently
+                    //{
+                    //    Console.ForegroundColor = ConsoleColor.Yellow;
+                    //    Console.BackgroundColor = ConsoleColor.Magenta;
+                    //    Console.Write($"{element}");
+                    //    Console.ResetColor();
+                    //}
                     else
                     {
                         Console.ForegroundColor = ConsoleColor.Magenta;
@@ -41,12 +63,26 @@ namespace inspo_maze
                         Console.Write($" ");
                         Console.ResetColor();
                     }
-
-                    
                 }
-
             }
+        
         }
+
+        //public void DrawLayout(string[,] generalGrid)
+        //{
+        //    //Console.SetWindowSize(Columns, Rows);
+        //    for (int y = 0; y < generalGrid.GetLength(0); y++)
+        //    {
+        //        for (int x = 0; x < generalGrid.GetLength(1); x++)
+        //        {
+        //            string element = generalGrid[y, x];
+        //            Console.SetCursorPosition(x, y);
+        //            Console.Write(element);
+
+        //        }
+
+        //    }
+        //}
 
         //public string GetElement(int x, int y)
         //{

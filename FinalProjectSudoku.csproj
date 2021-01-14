@@ -9,4 +9,16 @@
     <PackageReference Include="System.IO" Version="4.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="GeneralFrame.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Level1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Level1Solution.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
