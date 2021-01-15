@@ -1,5 +1,7 @@
-﻿using System;
+﻿using FinalProjectSudoku;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 
@@ -11,6 +13,7 @@ namespace inspo_maze
         private Player CurrentPlayer;
         public List<string> UserInputs { get; set; } = new List<string>();
         public List<int> Hints = new List<int>();
+        public List<Players> Players = new List<Players>();
 
         public void Start()
         {
@@ -466,5 +469,6 @@ namespace inspo_maze
             Console.WriteLine("OOOOO    OOOOO    OOOOO       OO OO    OOOOO    O   O");
 
         }
+        
     }
 }
