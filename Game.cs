@@ -145,9 +145,9 @@ namespace inspo_maze
                            
                     }
                         break;
-                //case ConsoleKey.Escape
-                //go to end
-                //break;
+                case ConsoleKey.Escape:
+                    InfoAboutGame();
+                break;
                 case ConsoleKey.R:
 
                    

@@ -31,3 +31,4 @@ C:\Users\Sandra Aunina\source\repos\Sudoku_finalProject\bin\Debug\netcoreapp3.1\
 C:\Users\Sandra Aunina\source\repos\Sudoku_finalProject\bin\Debug\netcoreapp3.1\Level1.txt
 C:\Users\Sandra Aunina\source\repos\Sudoku_finalProject\bin\Debug\netcoreapp3.1\Level1Solution.txt
 C:\Users\Gerda\Documents\GitHub\Sudoku_finalProject\bin\Debug\netcoreapp3.1\TextFile1.txt
+C:\Users\Sandra Aunina\source\repos\Sudoku_finalProject\bin\Debug\netcoreapp3.1\TextFile1.txt
