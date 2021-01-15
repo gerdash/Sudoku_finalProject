@@ -19,7 +19,7 @@ namespace inspo_maze
         {
             Console.Title = "THE BEST SUDOKU EVER!";
 
-            //DisplayIntro();
+            DisplayIntro();
             string[,] grid = LevelParser.ParseFileToArray("Level1.txt");
             MyWorld = new World(grid);
             MyWorld.GridSolution = LevelParser.ParseFileToArray("Level1Solution.txt");
@@ -324,11 +324,11 @@ namespace inspo_maze
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Press:");
-            Console.WriteLine("1 - to start new game");
+            Console.WriteLine("1 - start new game");
             Console.WriteLine();
-            Console.WriteLine("2 - to see leaderboard");
+            Console.WriteLine("2 - info about");
             Console.WriteLine();
-            Console.WriteLine("3 - to exit game");
+            Console.WriteLine("3 - exit game");
             Console.WriteLine();
             string chosedmenuitem = Console.ReadLine();
 
@@ -339,7 +339,15 @@ namespace inspo_maze
                     break;
                 case "2":
                     Console.Clear();
-                    Console.WriteLine("Leaderboard coming soon...");
+                    PrintSudokuHorizontal();
+                    Console.WriteLine();
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    Console.WriteLine("Game was created by Gerda & Sandra");
+                    Console.WriteLine();
+                    Console.WriteLine("Final work for 'She Goes Tech' training.");
+                    Console.WriteLine();
+                    Console.WriteLine("2021, Riga");
+                    Console.WriteLine();
                     BackToMenu();
                     break;
                 case "3":

@@ -7,10 +7,12 @@
         public string Place { get; set; }
         public bool didPlayerWin { get; set; }
 
-        public Leaderboard(string name, int timeElapsed)
+        public Players(string name, int timeElapsed, string place, bool DidPlayerWin)
         {
             Name = name;
             TimeElapsed = timeElapsed;
+            Place = place;
+            didPlayerWin = DidPlayerWin;
         }
         
     }

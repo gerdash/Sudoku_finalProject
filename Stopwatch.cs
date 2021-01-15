@@ -4,12 +4,12 @@ using System.Text;
 
 namespace FinalProjectSudoku
 {
-    class Stopwatch
+    public class Stopwatch
     {
-        private DateTime _start;
-        private DateTime _stop;
-        private Random _rand;
-        private bool _isRunning;
+        public DateTime _start;
+        public DateTime _stop;
+        public Random _rand;
+        public bool _isRunning;
 
         public Stopwatch()
         {
@@ -38,7 +38,7 @@ namespace FinalProjectSudoku
         }
         public void Duration(TimeSpan duration)
         {
-            Console.WriteLine($"You finished this puzzle in {duration.Minutes} min {duration.Seconds} sec");
+            Console.WriteLine($"Puzzle was finished in {duration.Minutes} min {duration.Seconds} sec");
         }
     }
 }
