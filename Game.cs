@@ -186,7 +186,18 @@ namespace inspo_maze
 
             timer.Stop();
             
-            YouWonvisualisation();
+            
+            for (int i = 0; i < 2; i++) //sudoku intro visualisation movement
+            {
+                YouWonvisualisation();
+                System.Threading.Thread.Sleep(250);
+                Console.Clear();
+                PrintSudokuHorizontal();
+                System.Threading.Thread.Sleep(250);
+                Console.Clear();
+            }
+            InfoAboutGame();
+            Console.WriteLine();
         }
 
         public bool ContainsZero(string[,] grid)
