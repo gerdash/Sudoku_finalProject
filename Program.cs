@@ -11,7 +11,7 @@ namespace inspo_maze
             myGame.Start();
             //#endregion
             //#region Stopwatch
-            //var timer = new Stopwatch();
+            //var timer = new FinalProjectSudoku.TimeOfTheGame();
             //timer.Start();
             //timer.Stop();
             //#endregion

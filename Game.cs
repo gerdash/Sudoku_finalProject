@@ -21,12 +21,17 @@ namespace inspo_maze
 
             DisplayIntro();
             string[,] grid = LevelParser.ParseFileToArray("Level1.txt");
+
             MyWorld = new World(grid);
+          
+           
             MyWorld.GridSolution = LevelParser.ParseFileToArray("Level1Solution.txt");
-            //MyWorld.GeneralFrame = LevelParser.ParseFileToArray("Frame.txt");
+
+
             CurrentPlayer = new Player(5, 2);
-            
+
             RunGameLoop(grid, MyWorld.GridSolution, Hints, MyWorld.GeneralFrame);
+
             Console.ReadKey(true);
         }
 
@@ -92,7 +97,6 @@ namespace inspo_maze
                             CurrentPlayer.Y += 2;
                         }
                         break;
-
                     case ConsoleKey.Tab:
                         {
                             int x = CurrentPlayer.X;
@@ -152,8 +156,7 @@ namespace inspo_maze
                     InfoAboutGame();
                 break;
                 case ConsoleKey.R:
-
-                   
+                    //??? varbūt nevajag
 
                     break;
                     default:
@@ -163,39 +166,54 @@ namespace inspo_maze
         
         private void RunGameLoop(string[,] grid, string[,] gridSolution, List<int> Hints, string[,] generalGrid)
         {
-            while (true)
+          var timer = new TimeOfTheGame();
+            Console.Clear();
+            timer.Start();
+            System.Threading.Thread.Sleep(400);
+
+            while (ContainsZero(grid))
             {
+                
                 //Draw everything
                 DrawFrame(grid);
                 //Check player input
-              
                 HandlePlayerInput(grid, gridSolution, Hints);
                 //Check if the player has reached the exit and end the game if so
                 //string elementAtPlayerPos = MyWorld.GetElement(CurrentPlayer.X, CurrentPlayer.Y);
                 Console.SetCursorPosition(0, 0);
-                
-                int counter = 0;
-                for (int y = 0; y < grid.GetLength(0); y++)
-                {
-                    for (int x = 0; x < grid.GetLength(1); x++)
-                    {
-                        if (grid[y,x] == gridSolution[y,x])
-                        {
-                            counter++;
-                        }
-                        if (counter == grid.GetLength(0) * grid.GetLength(1))
-                        {
-                            System.Threading.Thread.Sleep(2000);
-                            Console.Clear();
-                            YouWonvisualisation();
-                            break;
-                        }
+      
+            }
 
+            timer.Stop();
+            
+            YouWonvisualisation();
+        }
+
+        public bool ContainsZero(string[,] grid)
+        {
+            int counter = 0;
+            for (int y = 0; y < grid.GetLength(0); y++)
+            {
+                for (int x = 0; x < grid.GetLength(1); x++)
+                {
+                    if (grid[y, x] == "0")
+                    {
+                        counter++; 
                     }
                 }
-
-
             }
+
+            if (counter > 0)
+            {
+                return true;
+            }
+            else
+            {
+               
+                return false;
+            }
+
+
         }
         static void PrintSudoku()
         {

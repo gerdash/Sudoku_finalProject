@@ -414,19 +414,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Sandra Aunina\\.nuget\\packages\\": {}
+    "C:\\Users\\Gerda\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sandra Aunina\\source\\repos\\Sudoku_finalProject\\FinalProjectSudoku.csproj",
+      "projectUniqueName": "C:\\Users\\Gerda\\Documents\\GitHub\\Sudoku_finalProject\\FinalProjectSudoku.csproj",
       "projectName": "FinalProjectSudoku",
-      "projectPath": "C:\\Users\\Sandra Aunina\\source\\repos\\Sudoku_finalProject\\FinalProjectSudoku.csproj",
-      "packagesPath": "C:\\Users\\Sandra Aunina\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sandra Aunina\\source\\repos\\Sudoku_finalProject\\obj\\",
+      "projectPath": "C:\\Users\\Gerda\\Documents\\GitHub\\Sudoku_finalProject\\FinalProjectSudoku.csproj",
+      "packagesPath": "C:\\Users\\Gerda\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Gerda\\Documents\\GitHub\\Sudoku_finalProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Sandra Aunina\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Gerda\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -8,15 +8,17 @@
 |                                                                        |
 |                                              left arrow - move left    |
 |                                                                        |
+|                                              up arrow - move up        |
+|                                                                        |
 |                                              H - hint                  |
 |                                                                        |
 |                                              Tab - number input        |
 |                                                                        |
 |                                              Esc - quit game           |
 |                                                                        |
-|                                              N - new puzzle            |
-|                                                                        |
 |                                              R - redraw                |
+|                                                                        |
+|                                                                        |
 |                                                                        |
 |                                                                        |
 |  Elements                                   +------------------------+ |
