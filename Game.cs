@@ -187,13 +187,13 @@ namespace inspo_maze
             timer.Stop();
             
             
-            for (int i = 0; i < 2; i++) //sudoku intro visualisation movement
+            for (int i = 0; i < 4; i++) //sudoku intro visualisation movement
             {
                 YouWonvisualisation();
-                System.Threading.Thread.Sleep(250);
+                System.Threading.Thread.Sleep(300);
                 Console.Clear();
                 PrintSudokuHorizontal();
-                System.Threading.Thread.Sleep(250);
+                System.Threading.Thread.Sleep(300);
                 Console.Clear();
             }
             InfoAboutGame();
