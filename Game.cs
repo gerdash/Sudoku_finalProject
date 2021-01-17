@@ -400,10 +400,12 @@ namespace inspo_maze
                     
                     break;
                 case "2":
-                    Console.WriteLine("You chose medium"); //add method here
+                    Console.WriteLine("Medium level coming soon..."); //add method here
+                    BackToMenu();
                     break;
                 case "3":
-                    Console.WriteLine("You chose hard"); //add method here
+                    Console.WriteLine("Killer level coming soon..."); //add method here
+                    BackToMenu();
                     break;
                 case "N":
                     InfoAboutGame();
